@@ -1,0 +1,69 @@
+<div class="grid">
+    <div class="col-12">
+        <form autocomplete="off" (ngSubmit)="cadastrar()" [formGroup]="talentosForm">
+            <div class="card">
+                <p-toast key="tst"></p-toast>
+                <div class="p-fluid p-formgrid grid">
+
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="nome">Nome</label>
+                        <input pInputText id="nome" name="nome" type="text" formControlName="nome" />
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="sobrenome">Sobrenome</label>
+                        <input pInputText id="sobrenome" name="sobrenome" type="text" formControlName="sobrenome" />
+                    </div>
+                </div>
+
+                <div class="p-fluid p-formgrid grid" formGroupName="endereco">
+                    <div class="field col-12">
+                        <label htmlFor="endereco">Endereço</label>
+                        <input pInputTextarea id="endereco" name="endereco" rows="4" formControlName="rua" />
+                    </div>
+
+                    <div class="field col-12 md:col-3">
+                        <label htmlFor="estado">Estado</label>
+                        <p-autoComplete formControlName="estado" [suggestions]="estadosFiltrados" (completeMethod)="filtrarEstados($event)"  [dropdown]="true">
+                        </p-autoComplete>
+                    </div>
+
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="cidade">Cidade</label>
+                        <input pInputText id="cidade" name="cidade" type="text" formControlName="cidade" />
+                    </div>
+
+                    <div class="field col-12 md:col-3">
+                        <label htmlFor="cep">Cep</label>
+                        <input pInputText id="cep" name="cep" type="text" formControlName="cep" />
+                    </div>
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-3 md:col-3">
+                        <label htmlFor="habilidades">Habilidades</label>
+                        <p-multiSelect id="habilidades" [options]="habilidadesLista" formControlName="habilidades"
+                            placeholder="Selecione a Habilidade" optionLabel="descricao" class="multiselect-custom"
+                            display="chip">
+                            <ng-template let-habilidade pTemplate="item">
+                                <div class="flex align-items-center">
+                                    <span class="ml-2">{{habilidade.descricao}}</span>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
+                    </div>
+
+                    <div class="field col-9">
+                        <label htmlFor="linkedin">LinkedIn</label>
+                        <input pInputText id="linkedin" linkedin="" type="text" formControlName="linkedin" />
+                    </div>
+                </div>
+
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12">
+                        <button pButton pRipple label="Gravar" [disabled]="talentosForm.invalid"></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

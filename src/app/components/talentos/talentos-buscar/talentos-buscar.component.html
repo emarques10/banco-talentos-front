@@ -1,0 +1,62 @@
+<div class="grid">
+    <div class="col-12">
+        <form autocomplete="off" (ngSubmit)="pesquisar()" [formGroup]="talentosForm">
+            <div class="card">
+                <div class="p-fluid p-formgrid grid">
+
+                    <div class="field col-3">
+                        <label htmlFor="nome">Nome</label>
+                        <input pInputText id="nome" name="nome" type="text" formControlName="nome" />
+                    </div>
+                    <div class="field col-3">
+                        <label htmlFor="sobrenome">Sobrenome</label>
+                        <input pInputText id="sobrenome" name="sobrenome" type="text" formControlName="sobrenome" />
+                    </div>
+                    <div class="field col-3">
+                        <label htmlFor="estado">Estado</label>
+                        <p-multiSelect id="estado" [options]="estados" formControlName="estado"
+                            placeholder="Selecione o Estado" optionLabel="siglaEstado" class="multiselect-custom"
+                            display="chip">
+                            <ng-template let-estado pTemplate="item">
+                                <div class="flex align-items-center">
+                                    <span class="ml-2">{{estado.siglaEstado}}</span>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
+                    </div>
+                    
+                </div>
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-3">
+                        <label htmlFor="habilidades">Habilidades</label>
+                        <p-multiSelect id="habilidades" [options]="habilidadesLista" formControlName="habilidades"
+                            placeholder="Selecione a Habilidade" optionLabel="descricao" class="multiselect-custom"
+                            display="chip">
+                            <ng-template let-habilidade pTemplate="item">
+                                <div class="flex align-items-center">
+                                    <span class="ml-2">{{habilidade.descricao}}</span>
+                                </div>
+                            </ng-template>
+                        </p-multiSelect>
+                    </div>
+
+                    <div class="field col-3">
+                        <label htmlFor="faixasalarial">Faixa Salarial Inicial</label>
+                        <p-inputNumber mode="currency" inputId="currency-germany" currency="BRL" locale="pt-BR"> </p-inputNumber>                   
+                    </div>
+
+                    <div class="field col-3">
+                        <label htmlFor="faixasalarial">Faixa Salarial Final</label>
+                        <p-inputNumber mode="currency" inputId="currency-germany" currency="BRL" locale="pt-BR"> </p-inputNumber>                   
+                    </div>                    
+                </div>
+                
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12">
+                        <button pButton pRipple label="Buscar" [disabled]="talentosForm.invalid"></button>
+                    </div>
+                </div>       
+            </div>
+        </form>
+    </div>
+</div>

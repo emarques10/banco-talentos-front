@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  banco-talentos-front:
+    image: emarques10/banco-talentos-front
+    build: .
+    ports:
+      - 8081:80

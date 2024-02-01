@@ -1,0 +1,20 @@
+<div class="grid">
+    <div class="col-12">
+        <form autocomplete="off" (ngSubmit)="cadastrar()" #habilidadesForm="ngForm">
+            <div class="card">
+                <div class="p-fluid p-formgrid grid">
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="habilidade">Habilidade</label>
+                        <input pInputText id="habilidade" name="habilidade" type="text" [(ngModel)]="habilidade.descricao"/>
+                    </div>                    
+
+                    <div class="field col-12">
+                        <button  pButton pRipple label="Gravar"></button>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
