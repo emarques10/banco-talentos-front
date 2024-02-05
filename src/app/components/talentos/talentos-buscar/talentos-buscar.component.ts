@@ -25,8 +25,8 @@ export class TalentosBuscarComponent implements OnInit{
       sobrenome:[''],
       habilidades: [[]],
       estado: [[]],
-      faixasalarialInicial:[''],
-      faixasalarialFinal:[''],
+      faixasalarialInicial:[],
+      faixasalarialFinal:[],
     });
   }
   

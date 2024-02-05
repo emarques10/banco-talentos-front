@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Message, MessageService } from 'primeng/api';
 import { Estado } from 'src/app/api/estado';
 import { Habilidade } from 'src/app/api/habilidade';
@@ -37,6 +38,8 @@ export class TalentosCadastrarComponent implements OnInit{
     this.talentosForm = this.formBuilder.group({
       nome:['',Validators.required], 
       sobrenome:[''],
+      telefoneNumero:[''],
+      emailEnderecoEmail:[''],
       habilidades: [[], Validators.required],
       endereco: this.formBuilder.group({
         rua:[''],
@@ -44,7 +47,8 @@ export class TalentosCadastrarComponent implements OnInit{
         cidade:[''],
         cep:['']
       }),
-      linkedin:['']      
+      linkedin:[''],
+      faixaSalarial:[0,Validators.required]
     });
   }
   
@@ -57,6 +61,7 @@ export class TalentosCadastrarComponent implements OnInit{
     return this.talentosService.cadastrarTalento(this.talentosForm.value).subscribe(res => {
       if(res){
         this.messageService.add({ key: 'tst', severity: 'success', summary: 'Success Message', detail: 'Candidato Adicionado' });
+        this.talentosForm.reset();
       }
     })
   }

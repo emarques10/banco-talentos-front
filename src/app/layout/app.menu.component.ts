@@ -22,14 +22,14 @@ export class AppMenuComponent implements OnInit {
                         label: 'Atração de Talentos', icon: 'pi pi-fw pi-users',
                         items: [
                             {
-                                label: 'Vagas', icon: 'pi pi-fw pi-bookmark',
+                                label: 'Vagas', icon: 'pi pi-fw pi-ticket',
                                 items: [
-                                    { label: 'Buscar', icon: 'pi pi-fw pi-bookmark', routerLink: ['/vagas/buscar'] },
-                                    { label: 'Cadastrar', icon: 'pi pi-fw pi-bookmark', routerLink: ['/vagas/cadastrar'] },
+                                    { label: 'Buscar', icon: 'pi pi-fw pi-search', routerLink: ['/vagas/buscar'] },
+                                    { label: 'Cadastrar', icon: 'pi pi-fw pi-plus', routerLink: ['/vagas/cadastrar'] },
                                 ]
                             },
                             {
-                                label: 'Banco de talentos', icon: 'pi pi-fw pi-bookmark',
+                                label: 'Banco de talentos', icon: 'pi pi-fw pi-users',
                             },
                         ]
                     },
@@ -37,10 +37,10 @@ export class AppMenuComponent implements OnInit {
                         label: 'Gestão de Talentos', icon: 'pi pi-fw pi-chart-bar',
                         items: [
                             {
-                                label: 'Buscar', icon: 'pi pi-fw pi-bookmark', routerLink: ['/talentos/buscar']
+                                label: 'Buscar', icon: 'pi pi-fw pi-search', routerLink: ['/talentos/buscar']
                             },
                             {
-                                label: 'Cadastrar', icon: 'pi pi-fw pi-bookmark', routerLink: ['/talentos/cadastrar']
+                                label: 'Cadastrar', icon: 'pi pi-fw pi-plus', routerLink: ['/talentos/cadastrar']
                             },
                         ]
                     },
@@ -50,14 +50,8 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Habilidades', icon: 'pi pi-fw pi-bookmark',
                                 items: [
-                                    { label: 'Adicionar', icon: 'pi pi-fw pi-bookmark', routerLink: ['/habilidades/cadastrar'] },
-                                    { label: 'Editar', icon: 'pi pi-fw pi-bookmark' },
-                                ]
-                            },
-                            {
-                                label: 'Submenu 2.2', icon: 'pi pi-fw pi-bookmark',
-                                items: [
-                                    { label: 'Submenu 2.2.1', icon: 'pi pi-fw pi-bookmark' },
+                                    { label: 'Adicionar', icon: 'pi pi-fw pi-plus', routerLink: ['/habilidades/cadastrar'] },
+                                    { label: 'Editar', icon: 'pi pi-fw pi-pencil' },
                                 ]
                             },
                         ]

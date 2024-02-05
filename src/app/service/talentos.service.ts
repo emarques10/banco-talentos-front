@@ -15,4 +15,6 @@ export class TalentosService {
   public cadastrarTalento(talento: Pessoa): Observable<Pessoa>{
     return this.httpClient.post<Pessoa>(this.url, talento);
   }
+
+  
 }

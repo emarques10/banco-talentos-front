@@ -13,6 +13,16 @@
                         <label htmlFor="sobrenome">Sobrenome</label>
                         <input pInputText id="sobrenome" name="sobrenome" type="text" formControlName="sobrenome" />
                     </div>
+
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="email">E-Mail</label>
+                        <input pInputText id="email" name="email" type="text" formControlName="emailEnderecoEmail" />
+                    </div>
+
+                    <div class="field col-12 md:col-6">
+                        <label htmlFor="telefone">Telefone</label>
+                        <input pInputText id="telefone" name="telefone" type="text" formControlName="telefoneNumero" />
+                    </div>
                 </div>
 
                 <div class="p-fluid p-formgrid grid" formGroupName="endereco">
@@ -52,9 +62,14 @@
                         </p-multiSelect>
                     </div>
 
-                    <div class="field col-9">
+                    <div class="field col-6">
                         <label htmlFor="linkedin">LinkedIn</label>
                         <input pInputText id="linkedin" linkedin="" type="text" formControlName="linkedin" />
+                    </div>
+
+                    <div class="field col-3">
+                        <label htmlFor="faixasalarial">Faixa Salarial</label>
+                        <p-inputNumber mode="currency" inputId="faixasalarial" currency="BRL" locale="pt-BR" formControlName="faixaSalarial"> </p-inputNumber>                   
                     </div>
                 </div>
 
@@ -65,5 +80,6 @@
                 </div>
             </div>
         </form>
+        {{talentosForm.value | json}}
     </div>
 </div>
